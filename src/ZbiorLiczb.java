@@ -12,12 +12,12 @@ public class ZbiorLiczb {
         }
         System.out.println(numbers.first());
         System.out.println(numbers.last());
-        int average = sredniaLiczb(numbers);
+        double average = sredniaLiczb(numbers);
         System.out.println(average);
         wiekszeOdSredniej(numbers);
     }
 
-    public static int sredniaLiczb(TreeSet<Integer> numbers) {
+    public static double sredniaLiczb(TreeSet<Integer> numbers) {
         int suma = 0;
         Iterator<Integer> iterator = numbers.iterator();
         while (iterator.hasNext()) {
@@ -27,15 +27,15 @@ public class ZbiorLiczb {
         return suma / numbers.size();
     }
     public static void wiekszeOdSredniej(TreeSet<Integer> numbers) {
-        ArrayList<Integer> liczbyWieksze = new ArrayList<>();
-        float average = sredniaLiczb(numbers);
-        for (Integer num : numbers) {
-            if (num > average) {
-                liczbyWieksze.add(num);
+        double average = sredniaLiczb(numbers);
+        Iterator<Integer> iterator = numbers.iterator();
+        while (iterator.hasNext()) {
+            Integer next = iterator.next();
+            if (next > average) {
+                System.out.println(next);
             }
-            for (int i = 0; i < liczbyWieksze.size(); i++) {
-                System.out.println(liczbyWieksze.get(i));
+
             }
         }
     }
-}
+
