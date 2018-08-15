@@ -7,7 +7,7 @@ public class ZbiorLiczb {
     public static void main(String[] args) {
         Random random = new Random();
         TreeSet<Integer> numbers = new TreeSet<>();
-        for (int i = 0; i < 50; i++) {
+        while (numbers.size()<50) {
             numbers.add(random.nextInt(1000));
         }
         System.out.println(numbers.first());
@@ -34,7 +34,6 @@ public class ZbiorLiczb {
             if (next > average) {
                 System.out.println(next);
             }
-
             }
         }
     }
